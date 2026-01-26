@@ -637,12 +637,18 @@ section {
 
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 3rem;
     align-items: center;
     justify-items: center;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* When there are 3 items, ensure they're evenly distributed */
+.clients-grid .client-logo:only-child,
+.clients-grid .client-logo:nth-child(3):last-child {
+    /* Auto-fit will handle this, but we ensure proper spacing */
 }
 
 .client-logo {
@@ -656,6 +662,16 @@ section {
     transition: all 0.3s ease;
     filter: grayscale(100%) brightness(0.8);
     position: relative;
+}
+
+.client-logo-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .client-logo:hover {
