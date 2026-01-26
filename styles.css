@@ -704,6 +704,22 @@ section {
     opacity: 0.7;
 }
 
+/* Scale up the edrn.png logo to match other logos better */
+/* Safari-compatible approach: use width/height with vendor prefixes */
+.client-logo img[src*="edrn"] {
+    width: 130% !important;
+    height: 130% !important;
+    max-width: none !important;
+    /* Use width/height for Safari, transform might conflict with parent hover */
+}
+
+/* Ensure hover effect works - override parent transform for this specific logo */
+.client-logo:hover img[src*="edrn"] {
+    width: 135% !important;
+    height: 135% !important;
+    /* Parent transform won't affect this since we're using width/height */
+}
+
 .client-logo:hover img {
     opacity: 1;
 }
