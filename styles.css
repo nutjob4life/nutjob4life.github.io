@@ -949,10 +949,11 @@ section {
 }
 
 .contact .section-title {
-    background: linear-gradient(135deg, #a855f7 0%, #00d4ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #d0d0d0;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
 }
 
 .social-links {
