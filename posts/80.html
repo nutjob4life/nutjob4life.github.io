@@ -163,34 +163,34 @@
                     braces for single-statement blocks, etc., but <em>especially using more than 80 columns</em> means that hairy
                     function calls like</p>
                 <pre><code>if (meaningPercentage &lt; 0.55) {
-                    console.log("This is a bit of a slog.");
-                    slog(
-                        meaningPercentage,
-                        "Meaning",
-                        "The meaning percentage is a measurement of the "
-                        " meaningfulness of the parameter and is required",
-                        xCoord / 9.0,
-                        yCoord &gt; 5.0? yCoord : yCoord * 2.0,
-                        zCoord - zOrigin,
-                        (xCoord + yCoord + zCoord) / 3.0,
-                        (xCoord + yCoord + zCoord) / 3.0,
-                     );
-                } else {
-                    console.log("Acceptable meaning determined);
-                }
+    console.log("This is a bit of a slog.");
+    slog(
+        meaningPercentage,
+        "Meaning",
+        "The meaning percentage is a measurement of the "
+        " meaningfulness of the parameter and is required",
+        xCoord / 9.0,
+        yCoord &gt; 5.0? yCoord : yCoord * 2.0,
+        zCoord - zOrigin,
+        (xCoord + yCoord + zCoord) / 3.0,
+        (xCoord + yCoord + zCoord) / 3.0,
+        );
+} else {
+    console.log("Acceptable meaning determined);
+}
                 </code></pre>
                 <p dir="auto">which is 17 SLOC I write as:</p>
                 <pre><code>if (meaningPercentage &lt; 0.55) {
-                    console.log("This is a bit of a slog.");
-                    slog(
-                        meaningPercentage, "Meaning",
-                        "The meaning percentage is a measurement of the meaningfulness of the parameter and is required",
-                        xCoord / 9.0, yCoord &gt; 5.0? yCoord : yCoord * 2.0, zCoord - zOrigin,
-                        (xCoord + yCoord + zCoord) / 3.0, (xCoord + yCoord + zCoord) / 3.0,
-                    );
-                } else {
-                    console.log("Acceptable meaning determined);
-                }
+    console.log("This is a bit of a slog.");
+    slog(
+        meaningPercentage, "Meaning",
+        "The meaning percentage is a measurement of the meaningfulness of the parameter and is required",
+        xCoord / 9.0, yCoord &gt; 5.0? yCoord : yCoord * 2.0, zCoord - zOrigin,
+        (xCoord + yCoord + zCoord) / 3.0, (xCoord + yCoord + zCoord) / 3.0,
+    );
+} else {
+    console.log("Acceptable meaning determined);
+}
                 </code></pre>
                 <p dir="auto">which is 11 SLOC—and made possible by <em>going widescreen!</em></p>
                 <p dir="auto">Besides, 80 columns is an ancient punch-card standard, and "tradition" is just peer-pressure from dead
