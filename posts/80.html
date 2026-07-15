@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Mere 80 Columns | Sean Kelly</title>
+    <meta name="description" content="A diatribe against the 80 column limit for source code">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .post-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .post-header {
+            margin-bottom: 3rem;
+        }
+        .post-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        .post-body {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        .post-body h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+        .post-body h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .post-body p {
+            margin-bottom: 1.5rem;
+        }
+        .post-body code {
+            background: var(--bg-card);
+            color: var(--primary-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+        .post-body pre {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+        }
+        .post-body pre code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+            border: none;
+        }
+        .post-body a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .post-body a:hover {
+            border-bottom-color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+        }
+        .back-link {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+        }
+        .post-body ul, .post-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        .post-body li {
+            margin-bottom: 0.5rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Sean Kelly</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/#about">About</a>
+                <a href="/#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-header">
+            <div class="container">
+                <a href="/blog.html" class="back-link">← Back to Blog</a>
+            </div>
+        </section>
+
+        <article class="post-content">
+            <div class="post-header">
+                <h1 class="post-title">A Mere 80 Columns</h1>
+                <div class="post-meta">
+                    <span>2026-07-15</span>
+                    <span>•</span>
+                    <span>programming</span>
+                </div>
+            </div>
+            <div class="post-body">
+
+                <p dir="auto">I've got this philosophy (yes, we're old enough now to have developed entire <em>philosophies</em>):</p>
+                <p dir="auto">Axiom one: that the "narrative arc" of a computer program is told in lines of code; that is, generally one
+                    thing happens <em>per line</em>. Call <code>f()</code>. Call <code>g()</code>. For <code>i</code> = 1 to 10 and call
+                    <code>h(i)</code> on the next line, etc.</p>
+                <p dir="auto">Sure, you can put multiple statements on a single line:</p>
+                <pre><code>f(); g(); for (i = 1; i &lt;= 10; ++i) h(i);
+                </code></pre>
+                <p dir="auto">But that's rare. One <em>statement per line, one line per statement</em>. Usually.</p>
+                <p dir="auto">Axiom two: <em>code is read more than it's written</em>. Therefore, anything we can do to make it easier
+                    to read the code, the better: good comments, proper formatting, all that jazz. Even if it's your own code, you may
+                    find yourself reading it years later and wondering, "What the heck was I thinking?"</p>
+                <p dir="auto">Importantly, if you can fit a function or data structure or what-have-you into a single
+                    "screen"—<em>without scrolling</em>—you've got a better chance at comprehending what you're seeing. Axiom two.</p>
+                <p dir="auto">Now, put those two axioms together! Conclusion: Saving vertical space is usually a good idea!</p>
+                <p dir="auto">So you'll find my style often converges on that: putting multiple imports on a single line, skipping the
+                    braces for single-statement blocks, etc., but <em>especially using more than 80 columns</em> means that hairy
+                    function calls like</p>
+                <pre><code>if (meaningPercentage &lt; 0.55) {
+                    console.log("This is a bit of a slog.");
+                    slog(
+                        meaningPercentage,
+                        "Meaning",
+                        "The meaning percentage is a measurement of the "
+                        " meaningfulness of the parameter and is required",
+                        xCoord / 9.0,
+                        yCoord &gt; 5.0? yCoord : yCoord * 2.0,
+                        zCoord - zOrigin,
+                        (xCoord + yCoord + zCoord) / 3.0,
+                        (xCoord + yCoord + zCoord) / 3.0,
+                     );
+                } else {
+                    console.log("Acceptable meaning determined);
+                }
+                </code></pre>
+                <p dir="auto">which is 17 SLOC I write as:</p>
+                <pre><code>if (meaningPercentage &lt; 0.55) {
+                    console.log("This is a bit of a slog.");
+                    slog(
+                        meaningPercentage, "Meaning",
+                        "The meaning percentage is a measurement of the meaningfulness of the parameter and is required",
+                        xCoord / 9.0, yCoord &gt; 5.0? yCoord : yCoord * 2.0, zCoord - zOrigin,
+                        (xCoord + yCoord + zCoord) / 3.0, (xCoord + yCoord + zCoord) / 3.0,
+                    );
+                } else {
+                    console.log("Acceptable meaning determined);
+                }
+                </code></pre>
+                <p dir="auto">which is 11 SLOC—and made possible by <em>going widescreen!</em></p>
+                <p dir="auto">Besides, 80 columns is an ancient punch-card standard, and "tradition" is just peer-pressure from dead
+                    people.</p>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright © Sean Kelly, 1993–2026. Software (but not content) Licensed under the Apache License 2.0.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

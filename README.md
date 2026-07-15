@@ -14,7 +14,7 @@ To post blogs:
 
 1. Copy `posts/template.html` to a new file, `posts/my-first-post.html` or whatever
 2. Replace `POST_TITLE`, `POST_DATE`, `POST_CATEGORY`, and `POST_DESCRIPTION`
-3. Add your content in the `.post_body` section
+3. Add your content in the `.post-body` section
 4. Add a link to the new post in `blog.html` in the `#blog-list` section.
 
 
